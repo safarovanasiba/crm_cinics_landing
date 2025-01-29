@@ -1,0 +1,17 @@
+<div class="profile">
+    <div class="container">
+        <div class="grid justify-content-center">
+            <p-tabMenu [model]="items" [activeItem]="activeItem">
+                <ng-template pTemplate="item" let-item>
+                    <a [routerLink]="[item.link]" pRipple class="tab-item flex align-items-center gap-2 p-menuitem-link">
+                        <span [class]="item.icon"></span>
+                        <span class="font-bold">
+                            {{ item.label }}
+                        </span>
+                    </a>
+                </ng-template>
+            </p-tabMenu>
+        </div>
+        <router-outlet></router-outlet>
+    </div>
+</div>

@@ -1,0 +1,29 @@
+<div class="h180"></div>
+<div class="container">
+	<div class="page-title-block" data-aos="fade-up">
+		<h1 [innerHTML]="$header.title"></h1>
+		<h3 [innerHTML]="$header.descr"></h3>
+	</div>
+
+	<div class="doctor-cards grid row-gap-4">
+		<ng-container *ngIf="($doctors | async)?.length">
+			<div class="xl:col-4 md:col-6 col-12 px-3" *ngFor="let item of $doctors | async">
+				<div class="def-card" data-aos="fade-up">
+					<div class="user-card">
+						<img class="doctor-image" [src]="getView(item.image)" alt="doctor img">
+						<div class="user-card__about">
+							<h3 class="ellipsis_1 m-0">{{item.fullname}}</h3>
+							<h4 class="ellipsis_2 m-0">{{item?.department?.name}}: {{item?.role?.name}}</h4>
+						</div>
+					</div>
+					<a [routerLink]="['/service','doctor',item.id]" class="user-card-btn">Запишитесь на консультацию</a>
+				</div>
+			</div>
+		</ng-container>
+		<ng-container *ngIf="!($doctors | async)">
+			<div class="spinner">
+				<p-progressSpinner ariaLabel="loading" />
+			</div>
+		</ng-container>
+	</div>
+</div>

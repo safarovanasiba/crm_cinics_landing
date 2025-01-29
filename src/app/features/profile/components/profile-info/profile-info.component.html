@@ -1,0 +1,34 @@
+<div class="grid justify-content-between py-6">
+	<!-- Left Profile Card -->
+	<ng-container *ngIf="$user_data | async as user; else loading">
+		<div class="col-12 md:col-4">
+			<div class="card profile-card">
+				<div class="profile-avatar">
+					<img [src]="getImage(user.image)" alt="Foydalanuvchi rasmi topilmadi" />
+				</div>
+			</div>
+		</div>
+
+		<div class="col-12 md:col-8">
+			<div class="info-card">
+				<ul class="profile-info__nav">
+					<li><strong>Полное имя:</strong>{{user.fullname}}</li>
+					<li *ngIf="user.email"><strong>Email: </strong>{{user.email}}</li>
+					<li><strong>Адрес: </strong>{{user.address}}</li>
+					<li><strong>Tug'ulgan sana: </strong>{{user.date_of_birth | date : 'dd.MM.yyyy'}}</li>
+					<li><strong>номер: </strong>+998 ({{user.phone.toString().slice(0,2)}}) {{user.phone.toString().slice(2)}}
+					</li>
+				</ul>
+			</div>
+		</div>
+	</ng-container>
+
+	<ng-template #loading>
+		<div class="col-12 my-6 py-6">
+			<div class="spinner">
+				<p-progressSpinner ariaLabel="loading" />
+			</div>
+		</div>
+	</ng-template>
+
+</div>

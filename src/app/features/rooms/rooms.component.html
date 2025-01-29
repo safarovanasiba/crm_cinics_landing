@@ -1,0 +1,24 @@
+<div class="h180"></div>
+<div class="container">
+	<div class="page-title-block" data-aos="fade-up">
+		<h1 class="m-0" [innerHTML]="$header.title"></h1>
+		<h3 class="m-0" [innerHTML]="$header.descr"></h3>
+	</div>
+	<div class="rooms-cards">
+		<ng-container *ngFor="let item of $service | async">
+			<div class="card" data-aos="fade-up">
+				<img [src]="getView(item.image!)" alt="room image">
+				<div class="card-about">
+					<h3 class="m-0 ellipsis_1">{{item.name}}</h3>
+					<p class="ellipsis_2 m-0 mt-1" [innerHTML]="item.descr"></p>
+					<p class="price m-0 ellipsis_1">{{item.price_list[0].price}} so'm</p>
+				</div>
+			</div>
+		</ng-container>
+		<ng-container *ngIf="!($service | async)">
+			<div class="spinner">
+				<p-progressSpinner ariaLabel="loading" />
+			</div>
+		</ng-container>
+	</div>
+</div>

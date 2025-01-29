@@ -1,0 +1,261 @@
+header {
+	position: absolute;
+	z-index: 100;
+	width: 100%;
+	top: 0;
+	left: auto;
+	right: auto;
+}
+
+.header-top {
+	background-color: var(--mc-023B71);
+	padding: 20px 0;
+	padding-bottom: 40px;
+}
+
+.header-top__wrap {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+
+// ProfileBtn
+.profile-btn {
+	display: inline-flex;
+	align-items: center;
+	background: linear-gradient(90deg, #0082FB 0%, #004D95 100%);
+	/* Tugma fon rangi */
+	color: white;
+	/* Matn va ikon rang */
+	border: none;
+	border-radius: 50%;
+	/* Yuvarlak tugma */
+	padding: 10px;
+	// margin-right: 25px;
+	cursor: pointer;
+	transition: background-color 0.3s;
+	box-sizing: border-box;
+}
+
+.profile-btn:hover {
+	background: linear-gradient(90deg, #004D95 0%, #0082FB 100%);
+}
+
+
+.profile-btn:active {
+	background: linear-gradient(90deg, #004D95 0%, #0082FB 100%);
+	transform: scale(1.05);
+}
+
+.close-btn{
+	background: linear-gradient(90deg, #b2c8dd 0%, #fb0054 100%);
+}
+.close-btn:hover{
+	background: linear-gradient(90deg, #fb0054 0%, #b2c8dd 100%);
+}
+.close-btn:active {
+	background: linear-gradient(90deg, #fb0054 0%, #b2c8dd 100%);
+	transform: scale(1.05);
+}
+
+.profile-icon {
+	font-size: 30px;
+}
+
+// 
+
+
+.contact {
+	display: flex;
+	align-items: center;
+
+	&>div:not(:first-child) {
+		border-left: 1px solid white;
+		margin: 0 20px;
+		padding-left: 20px;
+	}
+}
+
+.contact-item {
+	display: flex;
+	align-items: center;
+	column-gap: 10px;
+
+	img {
+		display: block;
+		width: 23px;
+		height: 23px;
+		flex-shrink: 0;
+	}
+}
+
+.contact-numb {
+	display: flex;
+	align-items: flex-start;
+	flex-direction: column;
+
+	h4,
+	a {
+		color: white;
+		font-size: 14px;
+		font-weight: 400;
+		text-decoration: none;
+		margin: 0;
+	}
+
+	a {
+		font-weight: 500;
+	}
+}
+
+.header-right__wrap {
+	display: flex;
+	align-items: center;
+	column-gap: 25px;
+	list-style: none;
+
+	li {
+		border: 1px solid white;
+		width: 36px;
+		height: 36px;
+		flex-shrink: 0;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		border-radius: 50%;
+		cursor: pointer;
+
+		img {
+			display: block;
+			aspect-ratio: 3/3;
+			object-fit: contain;
+		}
+	}
+}
+
+// header styles 
+.header {
+	width: 100%;
+	max-width: calc(100% - 50px);
+	transform: translateY(-20px);
+	margin: 0 auto;
+	border-radius: 18px;
+	background: white;
+	box-shadow: 0px 2px 22.5px 0px rgba(0, 0, 0, 0.05);
+	padding: 20px 25px;
+
+	.header-wrap {
+		display: flex;
+		align-items: center;
+		// position: relative;
+	}
+}
+
+nav {
+	width: fit-content;
+}
+
+.nav-link {
+	display: flex;
+	align-items: center;
+	column-gap: 20px;
+
+	li {
+		list-style: none;
+
+		a {
+			color: var(--424242);
+			font-size: 20px;
+			font-weight: 500;
+			text-decoration: none;
+		}
+	}
+}
+
+.mc-lang {
+	display: flex;
+	align-items: center;
+	flex-direction: column;
+}
+
+.header-right {
+	display: flex;
+	align-items: center;
+	margin-left: auto;
+	column-gap: 25px;
+}
+
+.service-orders {
+	margin-top: 60px;
+	display: flex;
+	align-items: flex-start;
+	justify-content: center;
+	column-gap: 100px;
+
+	.order-item {
+		border: 1px solid var(--mc-D6EBFE);
+		display: flex;
+
+		.order-item__icon {
+			width: 109px;
+			height: 107px;
+			flex-shrink: 0;
+			padding: 20px;
+		}
+
+		.order-item__txt {
+			width: 338px;
+			padding: 20px;
+			background-color: var(--mc-D6EBFE);
+
+			h3 {
+				color: var(--mc-0082FB);
+				font-size: 22px;
+				font-weight: 500;
+			}
+		}
+	}
+}
+
+.mobile-nav {
+	display: none;
+	background: rgb(2, 59, 113);
+}
+
+.mobile-nav__logo {
+	display: block;
+	text-align: center;
+
+	span {
+		display: block;
+	}
+}
+
+@media (max-width: 1750px) {
+	nav {
+		position: static;
+		transform: translateX(0);
+		margin: 0;
+	}
+}
+
+@media (max-width: 1200px) {
+	header {
+		display: none;
+	}
+
+	.mobile-nav {
+		display: block;
+		padding: 15px;
+
+		.movile-nav__wrap {
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+
+			a {
+				color: white;
+			}
+		}
+	}
+}

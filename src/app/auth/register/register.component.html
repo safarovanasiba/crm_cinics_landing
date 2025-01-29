@@ -1,0 +1,147 @@
+<div class="container">
+	<div class="login-wrap grid">
+		<div class="col-12 lg:col-6">
+			<div class="login-about hidden sm:block">
+				<h2>GLOBAL HEALTHCARE больница</h2>
+				<div class="login-about__icon hidden lg:block">
+					<img src="assets/images/login-about-icon.svg" alt="company icon">
+				</div>
+			</div>
+		</div>
+		<div class="col-12 lg:col-6">
+			<div class="login-form">
+				<ng-container>
+					<div class="flex align-items-center justify-content-center">
+						<div class="col-12">
+							<ng-container *ngIf="page_type == 'register'">
+								<form [formGroup]="$form_register" (submit)="submit()" class="form-series">
+									<div class="p-fluid p-formgrid grid">
+										<div class="col-12">
+											<h2>Регистрация</h2>
+										</div>
+		
+										<div class="series field col-12 md:col-6">
+											<label for="pass">Seriya (необязат)</label>
+											<p-inputMask  
+												(change)="setPerson()" 
+												mask="(aa) 9999999"
+												formControlName="series_document" 
+											>
+											</p-inputMask>
+										</div>
+										<div class="series field col-12 md:col-6">
+											<label for="re_pass">Tug'ilgan sana (необязат)</label>
+											<input pInputText (blur)="setPerson()" formControlName="date_of_birth" type="date">	
+										</div>
+		
+										<div class="series field col-12 md:col-6">
+											<label for="name">Полное имя</label>
+											<input pInputText type="text" formControlName="fullname" placeholder="Полное имя">
+										</div>
+										<div class="series field col-12 md:col-6">
+											<label for="name">Адрес</label>
+											<input pInputText type="text" formControlName="address" placeholder="Адрес">
+										</div>
+		
+										<div class="series field col-12 md:col-6">
+											<label for="pass">номер</label>
+											<!-- <input pInputText type="text" placeholder="+998(90)999 9999 " mask="(aa) 9999999"> -->
+											<p-inputMask 
+												mask="(99) 999-99-99" 
+												formControlName="phone" 
+												[readonly]="true"
+												class="">
+											</p-inputMask>
+										</div>
+										<div class="series field col-12 md:col-6">
+											<label for="pass">Код подтверждения</label>
+											<!-- <input pInputText type="text" placeholder="0000 " mask="(aa) 9999999"> -->
+											<p-inputMask 
+												mask="9999" 
+												formControlName="code" 
+												class="">
+											</p-inputMask>
+										</div>
+									</div>
+									<div class="grid">
+										<div class="col-12 md:col-6 mb-3 flex-order-2 md:flex-order-1">
+											<button class="button-secondary" pButton label="Назад"  (click)="back()"></button>
+										</div>
+										<div class="col-12 md:col-6 flex-order-1 md:flex-order-2">
+											<button class="" pButton type="submit" label="Регистрация"></button>
+										</div>
+									</div>
+								</form>
+							</ng-container>
+	
+							<ng-container *ngIf="page_type == 'login'">
+								<form [formGroup]="$form_login" (submit)="submit()" class="form-series">
+									<div class="p-fluid p-formgrid grid">
+										<div class="col-12">
+											<h2>Входить</h2>
+										</div>
+		
+										<div class="series field col-12 md:col-12">
+											<label for="pass">номер</label>
+											<p-inputMask 
+												mask="(99) 999-99-99" 
+												formControlName="phone"
+												[readonly]="true" 
+												class="">
+											</p-inputMask>
+										</div>
+										<div class="series field col-12 md:col-12">
+											<label for="pass">Код подтверждения</label>
+											<!-- <input pInputText type="text" placeholder="0000 " mask="(aa) 9999999"> -->
+											<p-inputMask 
+												mask="9999" 
+												formControlName="code" 
+												class="">
+											</p-inputMask>
+										</div>
+										
+									</div>
+									<div class="grid">
+										<div class="col-12 md:col-6 mb-3 flex-order-2 md:flex-order-1">
+											<button class="button-secondary" pButton label="Назад"  (click)="back()"></button>
+										</div>
+										<div class="col-12 md:col-6 flex-order-1 md:flex-order-2">
+											<button class="" pButton type="submit" label="Регистрация"></button>
+										</div>
+									</div>
+								</form>
+							</ng-container>
+	
+							<ng-container *ngIf="page_type == 'phone'">
+								<form [formGroup]="$form_phone" (submit)="submit()" class="form-series">
+									<div class="p-fluid p-formgrid grid">
+										<div class="col-12">
+											<h2>Входить</h2>
+										</div>
+		
+										<div class="series field col-12 md:col-12">
+											<label for="pass">номер</label>
+											<!-- <input pInputText type="text" placeholder="+998(90)999 9999 " mask="(aa) 9999999"> -->
+											<p-inputMask 
+												mask="(99) 999-99-99" 
+												formControlName="phone">
+											</p-inputMask>
+										</div>
+										
+									</div>
+									<button type="submit">Входить</button>
+								</form>
+							</ng-container>
+						</div>
+					</div>
+				</ng-container>
+	
+				<ng-container></ng-container>
+				
+				
+			</div>
+		</div>
+		
+		
+	</div>
+</div>

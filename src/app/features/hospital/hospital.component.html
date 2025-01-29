@@ -1,0 +1,210 @@
+<div id="home">
+	<div class="container">
+		<div class="home-wrap">
+			<div class="home-about z-5" data-aos="fade-right" data-aos-anchor="#example-anchor" data-aos-offset="500"
+				data-aos-duration="500">
+				<h1 class="m-0"><span>GLOBAL HEALTHCARE</span> заботьтесь о своем здоровье</h1>
+				<a routerLink="/about">Узнать больше</a>
+			</div>
+			<div class="home-img hidden lg:block" data-aos="fade-left" data-aos-anchor="#example-anchor" data-aos-offset="500"
+				data-aos-duration="500">
+				<img src="assets/images/home-img.png" alt="home img" width="100%" height="100%">
+			</div>
+		</div>
+	</div>
+</div>
+<div class="home-bottom">
+	<div data-aos="fade-up" class="container" data-aos-anchor="#example-anchor" data-aos-offset="500"
+		data-aos-duration="500">
+		<div class="home-bottom__wrap grid">
+			<ng-container *ngFor="let item of $header_bottom">
+				<div class="col-12 sm:col-6 md:col-6 xl:col-3">
+					<div class="item">
+						<div class="item-icon">
+							<img [src]="item.image" alt="item icon" width="100%" height="100%">
+						</div>
+						<div class="item-about">
+							<h1 class="m-0">{{item.count}}+</h1>
+							<h3 class="m-0">{{item.title}}</h3>
+						</div>
+					</div>
+				</div>
+			</ng-container>
+		</div>
+	</div>
+</div>
+<div id="doctors">
+	<div class="main-title">
+		<span class="title-element"></span>
+		<h1 class="m-0">Наши врачи</h1>
+	</div>
+	<div class="container">
+		<div class="doctor-cards grid row-gap-4">
+			<ng-container *ngIf="($doctors | async)?.length">
+				<div class="xl:col-4 md:col-6 col-12 px-3" *ngFor="let item of $doctors | async">
+					<div class="def-card" data-aos="fade-up">
+						<div class="user-card">
+							<img class="doctor-image" [src]="getView(item.image)" alt="doctor img">
+							<div class="user-card__about">
+								<h3 class="ellipsis_1 m-0">{{item.fullname}}</h3>
+								<h4 class="ellipsis_2 m-0">{{item?.department?.name}}: {{item?.role?.name}}</h4>
+							</div>
+						</div>
+						<a [routerLink]="['/service','doctor',item.id]" class="user-card-btn">Запишитесь на консультацию</a>
+					</div>
+				</div>
+			</ng-container>
+			<ng-container *ngIf="!($doctors | async)">
+				<div class="spinner">
+					<p-progressSpinner ariaLabel="loading" />
+				</div>
+			</ng-container>
+		</div>
+	</div>
+	<div class="more-link" routerLink="/doctors">
+		<h3 class="m-0">Посмотреть все</h3>
+		<img src="assets/images/arrow-right.svg" alt="arrow link icon">
+	</div>
+</div>
+
+<div class="p100">
+	<div class="container">
+		<!-- home service start -->
+		<div class="main-title">
+			<span class="title-element"></span>
+			<h1>Наши условия</h1>
+		</div>
+		<div class="service-cards home-service__cards  grid row-gap-3">
+			<ng-container *ngFor="let item of $service | async">
+				<div class="col-12 md:col-6 xl:col-4 md:px-3">
+					<div class="def-card" data-aos="fade-up">
+						<div class="def-card__wrap">
+							<div class="card-icon text-center">
+								<img [src]="getView(item.image!)" alt="service card icon">
+							</div>
+							<div class="card-about">
+								<h2 class="m-0 ellipsis_1">{{item.name}}</h2>
+								<h3 class="m-0 ellipsis_2">{{item?.staff?.department?.name}} <br> {{item?.staff?.fullname}}</h3>
+								<h4 class="mt-0 ellipsis_2" [innerHTML]="item.descr"></h4>
+							</div>
+						</div>
+						<button type="button" class="mc-btn">Запишитесь на консультацию</button>
+					</div>
+				</div>
+			</ng-container>
+
+			<ng-container *ngIf="!($service | async)">
+				<div class="spinner">
+					<p-progressSpinner ariaLabel="loading" />
+				</div>
+			</ng-container>
+		</div>
+	</div>
+
+	<div class="more-link" routerLink="/service">
+		<h3 class="m-0">Посмотреть все</h3>
+		<img src="assets/images/arrow-right.svg" alt="arrow link icon">
+	</div>
+</div>
+<!-- home service end -->
+<!-- home comment start -->
+<section id="home-comments" class="p100">
+	<div class="page-title-block">
+		<h1 class="m-0">Что думают наши клиенты</h1>
+		<h3 class="m-0">Pellentesque habitant morbi tristique senectus netus et malesuada fames ac turp egestas. Aliquam
+			viverra arcu.
+			Donec aliquet blandit enim feugiat mattis.</h3>
+	</div>
+	<div class="container mt-5" data-aos="fade-up">
+		<app-comments-slider [$client_comments]="$client_comments"></app-comments-slider>
+
+		<ng-container *ngIf="!($client_comments)">
+			<div class="spinner">
+				<p-progressSpinner ariaLabel="loading" />
+			</div>
+		</ng-container>
+	</div>
+</section>
+<!-- home comment end -->
+
+<!-- news start -->
+<section id="news" class="p100">
+	<div class="container">
+		<div class="news-wrap">
+			<div class="page-title-block">
+				<h1 class="m-0">Новости</h1>
+				<h3 class="m-0">Pellentesque habitant morbi tristique senectus netus et malesuada fames ac turp egestas. Aliquam
+					viverra
+					arcu.
+					Donec aliquet blandit enim feugiat mattis.</h3>
+			</div>
+			<div class="news-cards grid row-gap-3">
+				<ng-container *ngFor="let item of $news | async">
+					<div class="px-3 col-12 md:col-6 xl:col-4">
+						<div class="card news__card">
+							<!-- <div class="card-data">
+								<h1>25</h1>
+								<h1>Iyul</h1>
+							</div> -->
+							<img [src]="getView(item.image)" alt="news blog img">
+							<div class="card-about">
+								<div class="card-about__head">
+									<div class="item">
+										<img src="assets/images/user.svg" alt="news icon">
+										<span>{{item?.created_by ?? 'Admin'}}</span>
+									</div>
+									<div class="item">
+										<!-- <img src="assets/images/message.svg" alt="news icon"> -->
+										<!-- <span>{{item.created_at | date : 'MM.dd.yyyy, hh:mm'}}</span> -->
+										<span>{{item.created_at | date : 'MM.dd.yyyy'}}</span>
+									</div>
+								</div>
+								<h1 class="card-title">{{item.title}}</h1>
+								<a [routerLink]="['/news',item.id]" class="more-link">
+									<span>Более</span>
+									<span>
+										<img src="assets/images/line-arrow-right.svg" alt="more link img">
+									</span>
+								</a>
+							</div>
+						</div>
+					</div>
+				</ng-container>
+
+				<ng-container *ngIf="!($news | async)">
+					<div class="spinner">
+						<p-progressSpinner ariaLabel="loading" />
+					</div>
+				</ng-container>
+			</div>
+			<div class="more-link" routerLink="/news">
+				<h3 class="m-0">Посмотреть все</h3>
+				<img src="assets/images/arrow-right.svg" alt="arrow link icon">
+			</div>
+		</div>
+	</div>
+</section>
+<!-- news end -->
+
+<!-- FAQ start -->
+<section id="faq" class="p100">
+	<div class="container">
+		<div class="faq-wrap">
+			<div class="mt-0 page-title-block">
+				<div class="main-title">
+					<span class="title-element"></span>
+					<h1 class="m-0">FAQ</h1>
+				</div>
+				<h3 class="m-0">Вопросы, которые могут у вас возникнуть.</h3>
+			</div>
+			<p-accordion>
+				<ng-container *ngFor="let item of $faq">
+					<p-accordionTab [header]="item.quession">
+						<p class="m-0" [innerHTML]="item.answer"></p>
+					</p-accordionTab>
+				</ng-container>
+			</p-accordion>
+		</div>
+	</div>
+</section>
+<!-- FAQ end -->

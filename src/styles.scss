@@ -1,0 +1,409 @@
+/* You can add global styles to this file, and also import other style files */
+@import 'variables';
+@import 'breakpoints';
+@import 'base';
+@import 'primeflex/primeflex.scss';
+@import "../node_modules/primeng/resources/primeng.min.css";
+@import "../node_modules/primeflex/primeflex.scss";
+@import "../node_modules/primeicons/primeicons.css";
+@import "primeng/resources/themes/lara-light-blue/theme.css";
+@import "primeng/resources/primeng.css";
+@import "normalize";
+
+.spinner {
+	width: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+// Doctor cards styles ======================
+.doctor-cards {
+
+	.def-card {
+		position: relative;
+		width: 100%;
+		padding: 0 35px 30px 35px;
+
+		img {
+			width: 100%;
+			aspect-ratio: 2/2.3;
+			object-fit: cover;
+			border-radius: 35px;
+		}
+
+		&::before {
+			content: '';
+			position: absolute;
+			width: 100%;
+			bottom: 0;
+			left: 0;
+			border-radius: 35px;
+			background: linear-gradient(180.00deg, rgb(0, 130, 251) -17.735%, rgb(0, 77, 149) 100%);
+			width: 100%;
+			height: 234px;
+		}
+	}
+}
+
+.user-card {
+	width: 100%;
+	position: relative;
+	border-radius: 35px;
+	margin-bottom: 23px;
+
+	&::before {
+		border-radius: 35px;
+		content: '';
+		position: absolute;
+		bottom: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		z-index: 2;
+		background: linear-gradient(180.00deg, rgba(255, 255, 255, 0) 34.727%, rgb(13, 33, 66) 100%);
+	}
+
+	.user-card__about {
+		width: 100%;
+		position: absolute;
+		bottom: 0;
+		left: 0;
+		z-index: 3;
+		padding: 15px;
+		text-align: center;
+
+		h3,
+		h4 {
+			color: rgb(255, 255, 255);
+			font-size: 20px;
+			font-weight: 700;
+			line-height: 30px;
+		}
+
+		h4 {
+			font-weight: 400;
+		}
+	}
+}
+
+.user-card-btn {
+	padding: 15px;
+	border-radius: 14px;
+	background: rgb(255, 255, 255);
+	display: block;
+	color: rgb(32, 84, 168);
+	font-size: 20px;
+	font-weight: 600;
+	line-height: 30px;
+	position: relative;
+	z-index: 3;
+	width: 100%;
+	max-width: 298px;
+	padding: 15px 25px;
+	text-decoration: none;
+	margin: 0 auto;
+	text-align: center;
+}
+
+.p100 {
+	padding: 100px 0;
+}
+
+// Service styles ====================
+.service-cards {
+	margin-top: 100px;
+
+	.def-card {
+		border-radius: 51px;
+		background: white;
+		box-shadow: 0px 0px 34.5px 7px rgba(142, 142, 142, 0.10);
+		padding: 40px 35px;
+		box-sizing: border-box;
+		width: 100%;
+		height: 100%;
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		flex-direction: column;
+		row-gap: 20px;
+
+
+		.card-about {
+			.card-icon {
+				width: 121px;
+				height: 121px;
+				flex-shrink: 0;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				background-color: var(--mc-0082FB14);
+				border-radius: 50%;
+				margin: 0 auto;
+				margin-bottom: 20px;
+			}
+
+			width: 100%;
+			text-align: center;
+
+			h2 {
+				color: var(--mc-0082FB);
+				font-size: 28px;
+				font-weight: 600;
+			}
+
+			h4 {
+				color: var(--mc-BEBEBE);
+				font-size: 22px;
+				font-weight: 400;
+			}
+		}
+
+		button {
+			display: block;
+			margin: 0 auto;
+		}
+	}
+}
+
+
+.form-series {
+	&>*:not(:last-child) {
+		margin-bottom: 30px;
+	}
+}
+
+.form-series {
+	.series {
+		label {
+			display: block;
+			color: rgb(68, 68, 68);
+			font-size: 18px;
+			font-weight: 400;
+			line-height: 27px;
+			letter-spacing: 0%;
+			text-align: left;
+		}
+
+		input {
+			width: 100%;
+			border: 1px solid rgb(237, 237, 237);
+			border-radius: 18px;
+			background: rgb(255, 255, 255);
+			padding: 30px;
+			color: black;
+			font-size: 24px;
+			font-weight: 400;
+			line-height: 36px;
+		}
+	}
+
+	textarea {
+		padding: 30px;
+		width: 100%;
+		height: 268px;
+		border: 1px solid rgb(237, 237, 237);
+		border-radius: 18px;
+		background: rgb(255, 255, 255);
+		color: black;
+		font-size: 24px;
+		font-weight: 400;
+		line-height: 36px;
+	}
+
+	button {
+		border-radius: 16px;
+		background: linear-gradient(90.00deg, rgb(0, 130, 251), rgb(0, 77, 149) 100%);
+		color: rgb(255, 255, 255);
+		font-size: 24px;
+		font-weight: 600;
+		line-height: 36px;
+		border: none;
+		width: 100%;
+		padding: 20px;
+	}
+}
+
+.series {
+
+	a,
+	.series-about>h3 {
+		color: rgb(66, 66, 66);
+		font-size: 28px;
+		font-weight: 500;
+		line-height: 30px;
+	}
+
+	p {
+		color: rgb(182, 182, 182);
+		font-size: 20px;
+		font-weight: 400;
+		line-height: 30px;
+	}
+}
+
+.login-wrap {
+	width: 100%;
+	// height: 90vh;
+	// max-height: 1080px;
+	background: linear-gradient(185.83deg, rgb(0, 128, 247) 21.686%, rgb(0, 84, 161) 97.901%);
+	// display: flex;
+	align-items: center;
+	justify-content: space-between;
+	padding: 0.5px;
+
+	.login-about {
+		display: flex;
+		align-items: center;
+		justify-content: space-evenly;
+		flex-direction: column;
+		height: 100%;
+		min-height: 130px;
+		padding: 0 50px;
+
+		h2 {
+			color: rgb(255, 255, 255);
+			font-size: 44px;
+			font-weight: 700;
+			line-height: 50px;
+			letter-spacing: 0%;
+			text-align: center;
+		}
+	}
+
+	.login-form {
+		border-radius: 50px;
+		background: rgb(255, 255, 255);
+		width: 100%;
+		max-width: 1200px;
+		height: 100%;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		transform: scale(1.15);
+		padding: 50px 15px;
+
+		.form-series {
+			width: 100%;
+			max-width: 570px;
+		}
+	}
+}
+
+.login-form {
+	.form-series {
+		h2 {
+			color: rgb(51, 51, 51);
+			font-size: 30px;
+			font-weight: 700;
+			line-height: 66px;
+			letter-spacing: 0%;
+			text-align: center;
+		}
+	}
+}
+
+.login-about {
+	.login-about__icon {
+		border-radius: 0px 120px 120px 0px;
+		background: rgb(255, 255, 255);
+		width: 303px;
+		height: 303px;
+		flex-shrink: 0;
+		padding: 70px;
+
+		img {
+			width: 100%;
+			height: 100%;
+		}
+	}
+}
+
+.form-series button.button-secondary {
+	color: #475569;
+	background: #e1e7ed;
+}
+
+// Responsive styles ==============================
+
+@media (max-width:991px) {
+	.user-card-btn {
+		font-size: 17px;
+	}
+
+	.user-card .user-card__about h3,
+	.user-card .user-card__about h4 {
+		font-size: 18px;
+	}
+}
+
+@media (max-width:768px) {
+	.page-title-block {
+		margin-top: 50px;
+	}
+
+	.form-series {
+		.series {
+			label {
+				padding-left: 15px;
+			}
+		}
+	}
+
+	.form-series {
+		.series {
+			input {
+				font-size: 16px;
+				padding: 20px;
+			}
+		}
+	}
+
+	.form-series button {
+		display: block;
+		font-size: 16px;
+		padding: 12px;
+		width: 100%;
+	}
+
+	.service-cards .card .card-about h2 {
+		font-size: 20px;
+		line-height: 130%;
+	}
+
+	.service-cards .card .card-about p {
+		font-size: 18px;
+		line-height: 130%;
+	}
+}
+
+@media (max-width:450px) {
+	.doctor-cards {
+		.card {
+			padding: 0 30px 20px 30px;
+		}
+	}
+}
+
+@media (max-width:360px) {
+	.user-card-btn {
+		font-size: 16px;
+		line-height: 130%;
+	}
+
+	.user-card .user-card__about h3,
+	.user-card .user-card__about h4 {
+		font-size: 17px;
+		line-height: 130%;
+	}
+
+	.user-card .user-card__about {
+		padding: 15px 10px;
+	}
+
+	.service-cards .card button {
+		font-size: 16px;
+		padding: 15px 10px;
+		width: 100%;
+	}
+}

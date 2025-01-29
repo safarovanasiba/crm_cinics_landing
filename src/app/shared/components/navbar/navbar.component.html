@@ -1,0 +1,77 @@
+<header>
+	<div class="header-top">
+		<div class="container">
+			<div class="header-top__wrap">
+				<div class="header-top__left">
+					<div class="contact">
+						<div class="contact-item">
+							<img src="assets/images/nav-phone-icon.svg" alt="phone icon">
+							<div class="contact-numb">
+								<h4>Менеджер:</h4>
+								<a href="tel:+998556010201">+998 55 601 0201</a>
+							</div>
+						</div>
+						<div class="contact-item">
+							<img src="assets/images/email-icon.svg" alt="phone icon">
+							<div class="contact-numb">
+								<h4>Email:</h4>
+								<a href="">Harvard_school&#64;mail.ru</a>
+							</div>
+						</div>
+					</div>
+				</div>
+				<ul class="header-right__wrap">
+					<li>
+						<img src="assets/images/telegram-icon.svg" alt="telegram-icon">
+					</li>
+					<li>
+						<img src="assets/images/instagram.svg" alt="instagram-icon">
+					</li>
+					<li>
+						<img src="assets/images/youtube-icon.svg" alt="youtube-icon">
+					</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+	<div data-aos="fade-down">
+		<div class="header">
+			<div class="header-wrap">
+				<nav>
+					<ul class="nav-link">
+						<li><a routerLink="/">Главная</a></li>
+						<li><a routerLink="/about">О нас</a></li>
+						<li><a routerLink="/doctors">Врачи</a></li>
+						<li><a routerLink="/service">Услуги</a></li>
+						<li><a routerLink="/rooms">Чемберс</a></li>
+						<li><a routerLink="/news">Новости</a></li>
+						<li><a routerLink="/contact">Связь</a></li>
+					</ul>
+				</nav>
+				<div class="header-right">
+					<!-- <div class="mc-lang">
+						<img src="assets/images/globus-icon.svg" alt="language">
+						<h3>O’zbekcha</h3>
+					</div> -->
+					<button *ngIf="!isRegister()" type="button" class="mc-btn" routerLink="/auth/login">
+						Регистрация
+					</button>
+					<button class="profile-btn" *ngIf="isRegister()" routerLink="/profile">
+						<span class="pi pi-user profile-icon"></span>
+					</button>
+					<button class="profile-btn close-btn" *ngIf="isRegister()" (click)="logout()">
+						<span class="pi pi-sign-out profile-icon"></span>
+					</button>
+				</div>
+			</div>
+		</div>
+	</div>
+</header>
+<div class="mobile-nav">
+	<div class="container">
+		<div class="movile-nav__wrap">
+			<a routerLink="/" class="mobile-nav__logo">Global Healthcare <span>hospital</span></a>
+			<app-sidebar></app-sidebar>
+		</div>
+	</div>
+</div>

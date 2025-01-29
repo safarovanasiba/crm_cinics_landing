@@ -1,0 +1,103 @@
+.sidebar-logo {
+	margin-right: auto;
+}
+.menu-container{
+	margin-top: 20px;
+	margin-bottom: 50px;
+}
+
+.menu {
+	list-style: none;
+	margin: 0;
+	margin-bottom: 25px;
+
+	li {
+		&:not(:last-child) {
+			margin-bottom: 10px;
+		}
+
+		a {
+			text-decoration: none;
+			font-weight: 500;
+
+			&:hover {
+				color: #0082FB;
+			}
+		}
+	}
+}
+
+.contact-item {
+	&:first-child {
+		margin-bottom: 10px;
+	}
+
+	display: flex;
+	align-items: flex-start;
+	column-gap: 10px;
+
+	span {
+		margin-top: 5px;
+		font-size: 20px;
+	}
+
+	h4 {
+		font-size: 18px;
+		font-weight: 500;
+	}
+
+	a {
+		text-decoration: none;
+		color: #0082FB;
+	}
+}
+
+p-sidebar {
+	width: 100%;
+}
+
+.sidebar-right {
+	display: flex;
+	align-items: center;
+	column-gap: 15px;
+}
+.mobile-nav__logo {
+	display: block;
+	text-align: center;
+	font-size: 16px;
+
+	span {
+		display: block;
+	}
+}
+
+// ProfileBtn
+.profile-btn {
+	display: flex;
+	align-items: center;
+	background: linear-gradient(90deg, #0082FB 0%, #004D95 100%);
+	color: white;
+	border: none;
+	border-radius: 50%;
+	padding: 5px;
+	cursor: pointer;
+	transition: background-color 0.3s;
+	box-sizing: border-box;
+}
+.close-btn{
+	background: linear-gradient(90deg, #b2c8dd 0%, #fb0054 100%);
+	margin: 5px;
+}
+.close-btn:hover{
+	background: linear-gradient(90deg, #fb0054 0%, #b2c8dd 100%);
+}
+.close-btn:active {
+	background: linear-gradient(90deg, #fb0054 0%, #b2c8dd 100%);
+	transform: scale(1.05);
+}
+
+.mc-btn{
+	font-size: 12px;
+	padding: 15px;
+	margin: 0;
+}

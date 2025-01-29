@@ -1,0 +1,27 @@
+.group{
+    position: relative;
+}
+.downloadPDF{
+    position: absolute;
+    right: 10px;
+    bottom: 10px;
+}
+span.p3{
+    margin: 5px;
+    padding: 5px;
+    border-radius: 5px;
+}
+span.primary{
+    background: var(--primary-100);
+    color: var(--primary-700);
+}
+span.success{
+    background: var(--green-100);
+    color: var(--green-700);
+}
+span.danger{
+    // background-color: #ef4444;
+    // color: white;
+    background: var(--orange-100);
+    color: var(--orange-700);
+}

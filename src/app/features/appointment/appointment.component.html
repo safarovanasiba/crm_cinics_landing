@@ -1,0 +1,56 @@
+<div class="profile">
+	<div class="container">
+		<div class="grid">
+			<div class="col-12">
+				<div class="card appointment-card">
+					<ng-container>
+						<div class="grid justify-content-center">
+							<div class="col-12 md:col-6">
+								<form [formGroup]="$appointment" (submit)="submit()">
+									<div class="p-fluid p-formgrid grid">
+										<div class="col-12">
+											<h2>Запись на прием</h2>
+										</div>
+
+										<div class="field col-12 md:col-12">
+											<label for="pass">Врачи</label>
+											<p-dropdown [options]="doctors" formControlName="staff_id" [showClear]="false" [readonly]="false"
+												optionLabel="fullname" optionValue="id"
+												(onChange)="getAllDoctorServices($event.value)"></p-dropdown>
+										</div>
+
+										<div class="field col-12 md:col-12">
+											<label>Услуги</label>
+											<p-multiSelect class="p-multiSelect multiselect-custom" formControlName="service_id"
+												[options]="services" display="chip" optionLabel="name" optionValue="id"
+												(onChange)="calculateTotalPrice($event.value)">
+												<ng-template let-item pTemplate="item">
+													<div class="flex align-items-center">
+														<span class="ml-2">{{ item.name }} - {{item.price_list[0].price}} so'm</span>
+													</div>
+												</ng-template>
+											</p-multiSelect>
+										</div>
+										<div class="field col-12 md:col-12">
+											<label>Qabul vaqti</label>
+											<p-calendar dateFormat="dd.mm.yy" formControlName="date" type="date" />
+										</div>
+
+										<div class="field flex justify-content-center align-items-center col-12 md:col-12">
+											<p>Umumiy narx: {{totalPrice * (1 - totalDiscount/100)}} so'm</p>
+										</div>
+									</div>
+									<div class="grid justify-content-center">
+										<div class="col-6 md:col-6 mb-3">
+											<p-button [disabled]="$disableBtn" type="submit" class="mb-3" pButton label="Запись"></p-button>
+										</div>
+									</div>
+								</form>
+							</div>
+						</div>
+					</ng-container>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

@@ -1,0 +1,25 @@
+.profile{
+    margin-top: 220px;
+}
+.card {
+    min-height: 400px;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    background-color: white;
+    padding: 40px 40px;
+    margin-top: 40px;
+}
+.appointment-card {
+    text-align: center;
+    padding: 20px;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    background-color: #fff;
+}
+
+
+@media (max-width: 575px) {
+	.profile {
+		margin-top: 50px;
+    }
+}

@@ -1,0 +1,35 @@
+<div class="h180"></div>
+<div class="container">
+	<div data-aos="fade-up" class="" [ngClass]="[$header.image? 'doctor-detail':'page-title-block']">
+		<div class="text-center">
+			<img *ngIf="$header.image" [src]="getView($header.image)" alt="" class="doctor-detail__img">
+		</div>
+		<h1 class="text-center" [innerHTML]="$header.title"></h1>
+		<h3 class="text-editor" [innerHTML]="$header.descr"></h3>
+	</div>
+	<div class="service-cards home-service__cards  grid row-gap-3">
+		<ng-container *ngFor="let item of $service | async">
+			<div class="col-12 md:col-6 xl:col-4 md:px-3">
+				<div class="def-card" data-aos="fade-up">
+					<div class="def-card__wrap">
+						<div class="card-icon text-center">
+							<img [src]="getView(item.image!)" alt="service card icon">
+						</div>
+						<div class="card-about">
+							<h2 class="m-0 ellipsis_1">{{item.name}}</h2>
+							<h3 class="m-0 ellipsis_2">{{item?.staff?.department?.name}} <br> {{item?.staff?.fullname}}</h3>
+							<h4 class="mt-0 ellipsis_2" [innerHTML]="item.descr"></h4>
+						</div>
+					</div>
+					<button type="button" class="mc-btn" [routerLink]="['/appointment',item.id ]">Запишитесь на консультацию</button>
+				</div>
+			</div>
+		</ng-container>
+
+		<ng-container *ngIf="!($service | async)">
+			<div class="spinner">
+				<p-progressSpinner ariaLabel="loading" />
+			</div>
+		</ng-container>
+	</div>
+</div>

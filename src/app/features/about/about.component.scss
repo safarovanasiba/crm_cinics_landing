@@ -1,0 +1,152 @@
+.service-orders {
+	margin-top: 60px;
+	box-sizing: border-box;
+	display: flex;
+	align-items: flex-start;
+	justify-content: center;
+	column-gap: 100px;
+	max-width: 1350px;
+	padding: 0 20px;
+	margin: 0 auto;
+
+	.order-item {
+		border: 1px solid var(--mc-D6EBFE);
+		display: flex;
+		width: 100%;
+
+		.order-item__icon {
+			flex-shrink: 0;
+			padding: 20px;
+		}
+
+		.order-item__txt {
+			width: 100%;
+			padding: 20px;
+			display: flex;
+			align-items: center;
+			background-color: var(--mc-D6EBFE);
+
+			h3 {
+				color: var(--mc-0082FB);
+				font-size: 22px;
+				font-weight: 500;
+			}
+		}
+	}
+}
+
+.about-desc {
+	margin-top: 100px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	column-gap: 60px;
+}
+
+.about-desc__right {
+	width: 100%;
+	max-width: 709px;
+
+	p {
+		color: rgb(157, 157, 157);
+		font-size: 24px;
+		font-weight: 400;
+		line-height: 140%;
+		text-align: left;
+	}
+}
+
+.desc-user {
+	position: relative;
+	width: 100%;
+	max-width: 334.66px;
+
+	img.desc-user__img {
+		position: absolute;
+		width: 100%;
+		max-width: 255px;
+		height: fit-content;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+	}
+}
+
+.user-about {
+	text-align: center;
+
+	h3 {
+		color: rgb(0, 130, 251);
+		font-size: 28px;
+		font-weight: 600;
+		line-height: 42px;
+	}
+
+	h4 {
+		color: rgb(156, 156, 156);
+		font-size: 18px;
+		font-weight: 400;
+		line-height: 27px;
+		margin: 10px 0;
+	}
+
+	span {
+		display: block;
+		width: 60px;
+		margin: 0 auto;
+		height: 5px;
+		background: rgb(144, 164, 174);
+	}
+}
+
+
+@media (max-width: 1440px) {
+	.service-orders {
+		column-gap: 20px;
+
+		.order-item {
+			h3 {
+				line-height: 120%;
+			}
+		}
+	}
+}
+
+@media (max-width:1199px) {
+	.about-desc__right {
+		margin-top: 15px;
+	}
+}
+
+@media (max-width:768px) {
+	.service-orders {
+		flex-direction: column;
+		row-gap: 20px;
+		column-gap: 0;
+	}
+
+	.about-desc__right p {
+		padding: 0 15px;
+	}
+}
+@media (max-width:575px) {
+	.about-desc__right p {
+		font-size: 18px;
+	}
+}
+@media (max-width:450px) {
+	.service-orders {
+		.order-item {
+			.order-item__txt {
+				h3 {
+					font-size: 18px;
+				}
+			}
+
+			.order-item__icon {
+				width: 70px;
+				padding: 10px;
+			}
+		}
+	}
+}

@@ -1,0 +1,100 @@
+.img {
+	width: 100%;
+}
+
+/* ====================
+Page title block styles
+====================*/
+.page-title-block {
+	width: 100%;
+	max-width: 1307px;
+	margin: 100px auto 60px auto;
+	text-align: center;
+	padding: 0 15px;
+
+	h1,
+	h2 {
+		color: var(--mc-0082FB);
+		font-size: 48px;
+		font-weight: 600;
+		margin: 10px 0;
+	}
+
+	h2 {
+		font-size: 36px;
+	}
+
+	h3 {
+		color: var(--mc-9D9D9D);
+		font-size: 24px;
+		font-weight: 400;
+		line-height: 45px;
+	}
+}
+
+/*======================
+Public button styles
+=====================*/
+.mc-btn {
+	padding: 16px 25px;
+	border-radius: 14px;
+	background: linear-gradient(90deg, #0082FB 0%, #004D95 100%);
+	border: none;
+	padding: 20px;
+	color: white;
+	font-size: 18px;
+	font-weight: 600;
+}
+
+// _Base styles start @media ==========================
+.container {
+	padding-right: 15px;
+	padding-left: 15px;
+	margin-right: auto;
+	margin-left: auto;
+}
+
+@media (min-width: 768px) {
+	.container {
+		width: 100%;
+		max-width: 750px;
+	}
+}
+
+@media (min-width: 992px) {
+	.container {
+		width: 100%;
+		max-width: 970px;
+	}
+}
+
+@media (min-width: 1200px) {
+	.container {
+		width: 100%;
+		max-width: 1170px;
+	}
+}
+
+@media (min-width: 1440px) {
+	.container {
+		width: 100%;
+		max-width: 1720px;
+	}
+}
+
+@media (max-width: 768px) {
+	.page-title-block {
+		h1 {
+			line-height: 130%;
+			font-size: 30px;
+		}
+
+		h3 {
+			font-size: 18px;
+			line-height: 130%;
+		}
+	}
+
+}
+
+// _Base styles end @media ============================

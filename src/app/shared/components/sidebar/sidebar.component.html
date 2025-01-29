@@ -1,0 +1,53 @@
+<p-sidebar [(visible)]="sidebar">
+	<ng-template pTemplate="header">
+		<span class="font-semibold text-xl sidebar-logo"><p routerLink="/" class="mobile-nav__logo">Global Healthcare <br> <span>hospital</span></p></span>
+		
+	</ng-template>
+	<div class="card">
+		<!-- <p-menu [model]="items"></p-menu> -->
+		<nav class="menu-container">
+			<ul class="p-0 menu">
+				<li><a class="md:text-lg" (click)="close()" routerLink="/">Главная</a></li>
+				<li><a class="md:text-lg" (click)="close()" routerLink="/about">О нас</a></li>
+				<li><a class="md:text-lg" (click)="close()" routerLink="/doctors">Врачи</a></li>
+				<li><a class="md:text-lg" (click)="close()" routerLink="/service">Услуги</a></li>
+				<li><a class="md:text-lg" (click)="close()" routerLink="/rooms">Чемберс</a></li>
+				<li><a class="md:text-lg" (click)="close()" routerLink="/news">Новости</a></li>
+				<li><a class="md:text-lg" (click)="close()" routerLink="/contact">Связь</a></li>
+			</ul>
+		</nav>
+
+		<div class="contact">
+			<div class="contact-item">
+				<span class="pi pi-phone"></span>
+				<div class="contact-numb">
+					<h4 class="m-0">Менеджер:</h4>
+					<a href="tel:+998556010201">+998 55 601 0201</a>
+				</div>
+			</div>
+			<div class="contact-item">
+				<span class="pi pi-envelope"></span>
+				<div class="contact-numb">
+					<h4 class="m-0">Email:</h4>
+					<a href="">Harvard_school&#64;mail.ru</a>
+				</div>
+			</div>
+		</div>
+
+	</div>
+</p-sidebar>
+
+<div class="sidebar-right">
+	<button class="profile-btn" *ngIf="isRegister()" routerLink="/profile">
+		<span class="pi pi-user profile-icon"></span>
+	</button>
+	<button *ngIf="!isRegister()" type="button" class="mc-btn" routerLink="/auth/login">
+		Входить
+	</button>
+	<button class="profile-btn close-btn" *ngIf="isRegister()" (click)="logout()">
+		<span class="pi pi-sign-out profile-icon"></span>
+	</button>
+	<p-button (onClick)="sidebar = true" class="mobile-nav__bars" size="large">
+		<img src="assets/images/bars.svg" alt="bars icon" width="100%" height="100%" />
+	</p-button>
+</div>

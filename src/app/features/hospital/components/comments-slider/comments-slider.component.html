@@ -1,0 +1,62 @@
+<swiper-container [slidesPerView]="1" [spaceBetween]="60" fade="true" [loop]="true"
+  pagination="true" [breakpoints]="breakpointsConfig">
+  <ng-container *ngFor="let item of $client_comments">
+    <swiper-slide>
+      <div class="comment mx-3">
+        <img class="comment-card__bg" [src]="item.image" alt="comment bg">
+        <div class="comment-user">
+          <div class="comment-user__card">
+            <span class="quote">
+              <img src="assets/images/quote-icon.svg" alt="quote icon" width="100%" height="100%">
+            </span>
+            <img src="assets/images/comment-user.png" alt="comment user img" width="100%" height="100%">
+          </div>
+          <div class="comment-user__title">
+            <ul>
+              <li *ngFor="let star of arrayMake(item.star)">
+                <img src="assets/images/star-icon.svg" width="100%" height="100%" alt="star icon">
+              </li>
+            </ul>
+            <h2 class="m-0">{{item.name}}</h2>
+          </div>
+        </div>
+        <p class="m-0 comment-txt" [innerHTML]="item.comment">
+        </p>
+        <span class="comment-line"></span>
+      </div>
+    </swiper-slide>
+  </ng-container>
+</swiper-container>
+
+
+
+
+<!-- <swiper-container [slidesPerView]="1" [spaceBetween]="60" fade="true" [loop]="true" [slidesPerView]="2"
+	pagination="true">
+	<ng-container *ngFor="let item of $client_comments">
+		<swiper-slide>
+			<div class="comment">
+				<img class="comment-card__bg" [src]="item.image" alt="comment bg">
+				<div class="comment-user">
+					<div class="comment-user__card">
+						<span class="quote">
+							<img src="assets/images/quote-icon.svg" alt="quote icon" width="100%" height="100%">
+						</span>
+						<img src="assets/images/comment-user.png" alt="comment user img" width="100%" height="100%">
+					</div>
+					<div class="comment-user__title">
+						<ul>
+							<li *ngFor="let star of arrayMake(item.star)">
+								<img src="assets/images/star-icon.svg" width="100%" height="100%" alt="star icon">
+							</li>
+						</ul>
+						<h2>{{item.name}}</h2>
+					</div>
+				</div>
+				<p class="comment-txt" [innerHTML]="item.comment">
+				</p>
+				<span class="comment-line"></span>
+			</div>
+		</swiper-slide>
+	</ng-container>
+</swiper-container> -->

@@ -1,0 +1,144 @@
+.rooms-cards {
+	margin-top: 100px;
+	display: flex;
+	align-items: flex-start;
+	justify-content: flex-start;
+	flex-wrap: wrap;
+	gap: 20px;
+
+	.card {
+		position: relative;
+		width: 100%;
+		border-radius: 20px;
+
+		img {
+			display: block;
+			width: 100%;
+			height: fit-content;
+			border-radius: 20px;
+			aspect-ratio: 3/2.5;
+			object-fit: cover;
+		}
+
+		.card-about {
+			width: 100%;
+			max-width: calc(100% - 100px);
+			padding: 20px 30px;
+			position: absolute;
+			bottom: 0;
+			left: 0;
+			border-radius: 0px 20px;
+			background-color: white;
+			z-index: 2;
+			height: 100%;
+			max-height: 180px;
+			box-shadow: 4px 4px 29.1px 0px rgba(57, 57, 57, 0.10);
+		}
+	}
+}
+
+.card-about {
+
+	h3 {
+		color: #333;
+		font-size: 25px;
+		font-weight: 600;
+		position: relative;
+		display: inline-block;
+
+		&::before {
+			content: ' ';
+			position: absolute;
+			bottom: -2px;
+			width: 100%;
+			height: 5px;
+			border-radius: 28px;
+			background: linear-gradient(90deg, #0082FB 0%, #004D95 100%);
+		}
+	}
+
+	p {
+		color: var(--mc-9D9D9D);
+		font-size: 18px;
+		font-weight: 400;
+		line-height: 120%;
+	}
+
+	.price {
+		color: var(--mc-0082FB);
+		text-align: start;
+		margin-bottom: 10px;
+	}
+}
+
+@media (min-width:768px) {
+	.rooms-cards {
+		gap: 20px;
+
+		&>.card {
+			width: 100%;
+			max-width: calc(100% / 2 - 20px / 2);
+		}
+	}
+}
+
+@media (min-width:992px) {
+	.rooms-cards {
+		gap: 40px;
+
+		&>.card {
+			width: 100%;
+			max-width: calc(100% / 2 - 40px / 2);
+		}
+	}
+}
+
+@media (min-width:1440px) {
+	.rooms-cards {
+		gap: 40px;
+
+		&>.card {
+			width: 100%;
+			max-width: calc(100% / 3 - 80px / 3);
+		}
+	}
+}
+
+@media (max-width:768px) {
+	.rooms-cards {
+		.card {
+			.card-about {
+				height: fit-content;
+				max-height: fit-content;
+			}
+		}
+	}
+
+	.card-about {
+		h3 {
+			font-size: 20px;
+			margin: 0;
+		}
+
+		p {
+			font-size: 16px;
+			// line-height: 130%;
+		}
+	}
+}
+
+@media (max-width:550px) {
+	.rooms-cards .card .card-about {
+		max-width: 95%;
+	}
+}
+
+@media (max-width:360px) {
+	.rooms-cards .card .card-about {
+		padding: 10px;
+
+		h3 {
+			font-size: 18px;
+		}
+	}
+}

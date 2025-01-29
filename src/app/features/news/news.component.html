@@ -1,0 +1,54 @@
+<div class="h180"></div>
+<div class="container">
+	<ng-container *ngIf="page_type == 'list'">
+		<div class="page-title-block">
+			<h1 [innerHTML]="$header.title"></h1>
+			<h3 [innerHTML]="$header.descr"></h3>
+		</div>
+		<div class="news-cards grid row-gap-3">
+			<ng-container *ngFor="let item of $news | async">
+				<div class="px-3 col-12 md:col-6 xl:col-4">
+					<div class="card">
+						<div class="card-img">
+							<img [src]="getView(item.image)" alt="news blog img">
+						</div>
+						<!-- <div class="card-data">
+							<h1>25</h1>
+							<h1>Iyul</h1>
+						</div> -->
+						<div class="card-about">
+							<div class="card-about__head">
+								<div class="item">
+									<img src="assets/images/user.svg" alt="news icon">
+									<span>{{item?.created_by ?? 'Admin'}}</span>
+								</div>
+								<div class="item">
+									<!-- <img src="assets/images/message.svg" alt="news icon"> -->
+									<!-- <span>{{item.created_at | date : 'MM.dd.yyyy, hh:mm'}}</span> -->
+									<span>{{item.created_at | date : 'MM.dd.yyyy'}}</span>
+								</div>
+							</div>
+							<h1 class="card-title m-0 ellipsis_2">{{item.title}}</h1>
+							<a [routerLink]="['/news',item.id]" class="more-link">
+								<span>Более</span>
+								<span>
+									<img src="assets/images/line-arrow-right.svg" alt="more link img">
+								</span>
+							</a>
+						</div>
+					</div>
+				</div>
+			</ng-container>
+		</div>
+	</ng-container>
+
+	<ng-container *ngIf="page_type == 'detail'">
+		<div class="news-detail">
+			<div class="text-center">
+				<img [src]="getView($news_detail.image)" alt="news blog img" class="news-detail__img">
+			</div>
+			<h1 class="news-detail__title">{{$news_detail.title}}</h1>
+			<p [innerHTML]="$news_detail.descr" class="news-detail__desc"></p>
+		</div>
+	</ng-container>
+</div>
